@@ -19,18 +19,18 @@ class _JoinRoomScreenState extends State<JoinRoomScreen> {
   final SocketMethods _socketMethods = SocketMethods();
 
   @override
-  void dispose() {
-    super.dispose();
-    _nameController.dispose();
-    _idController.dispose();
-  }
-
-  @override
   void initState() {
     super.initState();
     _socketMethods.joinRoomSuccessListener(context);
     _socketMethods.errorOccuredListender(context);
     _socketMethods.updatePlayersStateListener(context);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _nameController.dispose();
+    _idController.dispose();
   }
 
   @override
